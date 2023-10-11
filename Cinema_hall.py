@@ -77,25 +77,24 @@ Enter Option : """)
         id = input("Enter ID: ")
 
         if cine.correct_id(id) == True:
-          r = input('Enter Rows and Columns:')
-          lst = r.split()
+            r = input('Enter Rows and Columns:')
+            lst = r.split()
 
-          for i in range(0,len(lst)-1,2):
-            
-            ro = int(lst[i])
-            col = int(lst[i+1])
+            for i in range(0, len(lst)-1, 2):
 
-            if cine.rows-1 >= ro and cine.cols-1 >= col:
-                if cine.booked_seat(id, ro, col) == False:
-                    print(
-                        f'Your seat ({ro},{col}) is successfully booked for Movie id :{id}')
-                    cine.book_seats(id, ro, col)
+                ro = int(lst[i])
+                col = int(lst[i+1])
+
+                if cine.rows-1 >= ro and cine.cols-1 >= col:
+                    if cine.booked_seat(id, ro, col) == False:
+                        print(
+                            f'Your seat ({ro},{col}) is successfully booked for Movie id :{id}')
+                        cine.book_seats(id, ro, col)
+                    else:
+                        print(f'Seat ({ro},{col}) is Already booked')
                 else:
-                    print(f'Seat ({ro},{col}) is Already booked')
-            else:
-                print('Invalid Rows and Columns')
+                    print(f'({ro},{col}) are Invalid Rows and Columns')
 
-            
         else:
             print("Invalid ID")
 
