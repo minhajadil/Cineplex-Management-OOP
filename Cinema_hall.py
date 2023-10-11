@@ -78,9 +78,6 @@ Enter Option : """)
 
         if cine.correct_id(id) == True:
             ro = input('Input Row:')
-            ro = int(ro)
-            col = input('Input Column: ')
-            col = int(col)
 
             if cine.rows >= ro and cine.cols >= col:
                 if cine.booked_seat(id, ro, col) == False:
@@ -88,9 +85,9 @@ Enter Option : """)
                         f'Your seat ({ro},{col}) is successfully booked for Movie id :{id}')
                     cine.book_seats(id, ro, col)
                 else:
-                    print("Seat is Already booked")
+                    print(f'Seat ({ro},{col}) is already booked')
             else:
-                print('Invalid Rows and Columns')
+                print(f'({ro},{col}) is invalid seat')
         else:
             print("Invalid ID")
 
